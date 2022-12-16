@@ -8,7 +8,7 @@ package InterfacciaClient;
 import java.io.IOException;
 import java.net.Socket;
 
-public class ClientThSend implements Runnable {
+public class ClientThSend{
 
     Socket server;
     Client client;
@@ -19,16 +19,7 @@ public class ClientThSend implements Runnable {
         this.client = client;
         this.sendStr = sendStr;
     }
-
-    @Override
-    public void run() {
-        while (true) {
-            try {
-                client.send(server,sendStr);
-            } catch (IOException ex) {
-            }
-        }
-    }
+  
     
     public void invia() throws IOException{
         client.send(server,sendStr);

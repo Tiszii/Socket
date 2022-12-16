@@ -20,7 +20,7 @@ public class Server {
     public Socket listen() throws IOException, InterruptedException{
         Socket Client = null;
         Client = server.accept();
-        out.modifica("[ClientThread]: Nuova connessione da " + Client.getInetAddress());
+        out.modifica("Nuova connessione da " + Client.getInetAddress());
         return Client;
     }
     

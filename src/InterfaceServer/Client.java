@@ -30,7 +30,6 @@ public class Client {
     public void receive(Socket Server)throws IOException{
         Scanner scan = new Scanner(Server.getInputStream());
         String str = scan.nextLine();
-        System.out.println("[server]: "+str);
     }
 }
 

@@ -93,7 +93,6 @@ public class ServerForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonStartActionPerformed
-        JOptionPane.showMessageDialog(rootPane, TestoPorta.getText().toString());
         ButtonStart.setEnabled(false);
         try {
             Inizia(Integer.parseInt(TestoPorta.getText()));
@@ -129,11 +128,11 @@ public class ServerForm extends javax.swing.JFrame {
         ThServer.start();
         StopButton.setEnabled(true);
 
-        out.modifica("[Server] Server avviato");  
+        out.modifica("Server avviato");  
     }
 
     public void Stop(Thread ThServer, Server server) throws IOException, InterruptedException {
-        out.modifica("[Server] Server Chiuso");
+        out.modifica("Server Chiuso");
         server.server.close();
         ThServer.stop();
     }

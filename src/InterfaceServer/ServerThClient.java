@@ -29,7 +29,7 @@ public class ServerThClient implements Runnable {
                 String s = server.receive(c1);
 
                 if ("close()".equals(s)) {
-                    server.out.modifica("[ClientThread]: Connessione chiusa da " + c1.getInetAddress());
+                    server.out.modifica("Connessione chiusa da " + c1.getInetAddress());
                     running = false;
 
                     for (int i = 0; clients[i] != null; i++) {
@@ -48,7 +48,7 @@ public class ServerThClient implements Runnable {
                         }
                     }
                 } else {
-                    server.out.modifica("[ClientThread]: " + c1.getInetAddress() + ": " + s);
+                    server.out.modifica(c1.getInetAddress() + ": " + s);
                     for (int i = 0; clients[i] != null; i++) {
                         if (!clients[i].equals(c1)) {
                             server.send(clients[i], s);
